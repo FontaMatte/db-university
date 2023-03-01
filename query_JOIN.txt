@@ -60,7 +60,7 @@
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
-    SELECT * 
+    SELECT DISTINCT `teachers`.*  
     FROM `teachers`
     INNER JOIN `course_teacher`
     ON `teachers`.`id` = `course_teacher`.`teacher_id`
@@ -71,7 +71,7 @@
     INNER JOIN `departments`
     ON `degrees`.`department_id` = `departments`.`id`
     WHERE `departments`.`name` = 'Dipartimento di Matematica';
-    NON COMPLETO
+    ORDER BY `teachers`.`name`;
 
 <------------------------------------------------------------------------>
 
