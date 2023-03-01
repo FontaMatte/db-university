@@ -18,7 +18,9 @@
 
     SELECT * 
     FROM `students` 
-    WHERE `date_of_birth` < '1990-02-28';
+    WHERE `date_of_birth` < '1993-02-28';
+    oppure
+    WHERE (DATEDIFF(CURRENT_DATE - `date_of_birth`) / 365.25) > 30;
 
 
 <------------------------------------------------------------------------>
@@ -51,16 +53,16 @@
 
 7. Da quanti dipartimenti è composta l'università? (12)
 
-    SELECT COUNT(*) 
+    SELECT COUNT(*) AS `departments_number`
     FROM `departments`;
 
 <------------------------------------------------------------------------>
 
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
-    SELECT * 
+    SELECT COUNT(*) AS `no_phone_number`
     FROM `teachers` 
-    WHERE `phone` IS NOT NULL;
+    WHERE `phone` IS NULL;
 
 <------------------------------------------------------------------------>
 
